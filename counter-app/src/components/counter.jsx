@@ -23,10 +23,15 @@ class Counter extends Component {
     // }
 
     //handleIncrement(){
-    handleIncrement=()=>{ //arrow function, do not need to bind to origin object, it's much more simple
+    handleIncrement=product=>{ //arrow function, do not need to bind to origin object, it's much more simple
         // console.log("Increment Clicked", this.state.count++);
+        console.log(product);
         this.setState({count: this.state.count+1})
-    }
+    };
+
+    doHandleIncrement =()=>{
+        this.handleIncrement({id:1});
+    };
 
     handleDecrement=()=>{
         this.setState({count: this.state.count-1})
@@ -37,7 +42,7 @@ class Counter extends Component {
             <React.Fragment>
                 <button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">Decrement</button>
                 <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>                
+                <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">Increment</button>                
                 {this.state.tags.length === 0 && "Please add a tag!"}
                 {this.renderTags()}
             </React.Fragment>
