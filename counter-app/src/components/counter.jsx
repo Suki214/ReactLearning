@@ -8,7 +8,7 @@ class Counter extends Component {
     };
 
     styles={
-        fontSize: 10,
+        fontSize: 15,
         fontWeight: 'bold'
     };
 
