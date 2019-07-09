@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state={
-        count:1,
+        count:this.props.value,
         //imageUrl:"https://picsum.photos/200"
         tags:[]
     };
@@ -38,14 +38,14 @@ class Counter extends Component {
     }
 
     render() {  
+        console.log('props', this.props);
         return (
-            <React.Fragment>
+            <div>
+                {this.props.children}
                 <button onClick={this.handleDecrement} className="btn btn-secondary btn-sm">Decrement</button>
                 <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={()=>this.handleIncrement()} className="btn btn-secondary btn-sm">Increment</button>                
-                {this.state.tags.length === 0 && "Please add a tag!"}
-                {this.renderTags()}
-            </React.Fragment>
+            </div>
         );
     }
 
