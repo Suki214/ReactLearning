@@ -1,3 +1,8 @@
+import Teacher,{prompte} from './teacher.js';
+import {Person} from './person.js'
+
+//for a exported default calss/function -> import ... from ''
+//for a exported named calss/function -> import {...} from ''
 //var -> in function
 //let -> block
 //const -> block
@@ -125,29 +130,40 @@ console.log(cloneN);
 
 
 //Classes
-class Person {
-    constructor(name){
-        this.name=name;
-    }
-    walk(){
-        console.log("walk");
-    }
-};
+// class Person {
+//     constructor(name){
+//         this.name=name;
+//     }
+//     walk(){
+//         console.log("walk");
+//     }
+// };
 
 const personP= new Person("SUU");
 console.log(personP.name);
 
 
 //inheritance
-class Teacher extends Person{
-    teach(){
-        console.log("teach");
-    }
-}
+// class Teacher extends Person{
+//     constructor(name, degree){
+//         super(name);
+//         this.degree=degree;
+//     }
+//     teach(){
+//         console.log("teach");
+//     }
+// }
 
-const teacher = new Teacher();
+const teacher = new Teacher('Mosh', 'Msc');
 teacher.teach();
 teacher.walk();
+
+
+//Modules
+//Split all classes to other file/folder
+
+
+//Named and Default Exports
 
 
 
