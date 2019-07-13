@@ -1,5 +1,6 @@
 import Teacher,{prompte} from './teacher.js';
-import {Person} from './person.js'
+import {Person} from './person.js';
+import React,{Component} from 'react';
 
 //for a exported default calss/function -> import ... from ''
 //for a exported named calss/function -> import {...} from ''
