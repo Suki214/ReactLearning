@@ -84,6 +84,75 @@ personO.walk();
 
 //map
 const colors=["red","green","blue"];
+const items=colors.map(color=>`<li>${color}</li>`);
+
+console.log(items);
+
+
+//object destructuring
+const address={
+    street:'',
+    city:'',
+    country:''
+};
+
+// const street = address.street;
+// const city = address.city;
+// const country = address.country;
+const{street:st,city}=address;
+
+
+//Spread Operator
+const first=[1,2,3];
+const second =[4,5,6];
+
+const combined = first.concat(second);
+const combinedS = [...first,'a', ...second];
+console.log(combined); //[1,2,3,4,5,6]
+console.log(combinedS); //[1,2,3,'a',4,5,6]
+
+const clone=[...first];
+console.log(clone); //[1,2,3]
+
+const name = {name:"Su"}
+const job ={ job:"engineer"}
+
+const combinedO = {...name,...job, address:"China"}
+console.log(combinedO);
+
+const cloneN={...name};
+console.log(cloneN);
+
+
+//Classes
+class Person {
+    constructor(name){
+        this.name=name;
+    }
+    walk(){
+        console.log("walk");
+    }
+};
+
+const personP= new Person("SUU");
+console.log(personP.name);
+
+
+//inheritance
+class Teacher extends Person{
+    teach(){
+        console.log("teach");
+    }
+}
+
+const teacher = new Teacher();
+teacher.teach();
+teacher.walk();
+
+
+
+
+
 
 
 
