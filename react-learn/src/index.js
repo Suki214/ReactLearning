@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import ReactDOM from 'react-dom'
+
+function MyApp(){
+  return(<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>);
+}
 
 ReactDOM.render(
-  <div><h1>Hello World!</h1><p>This is a Paragraph</p></div>,
-  document.getElementById('root')
-);
-
-
-var myNewP = document.createElement("p");
-myNewP.innerHTML="this is a paragraph";
+<MyApp/>,
+document.getElementById("root")
+)
