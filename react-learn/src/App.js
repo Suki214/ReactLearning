@@ -6,9 +6,9 @@ import TodoItem from './components/TodoItem'
 class App extends Component {
   render() {
     return (
-      <div className="App" className ='paragragh'>
+      <div className="App" className ='todo-list'>
         <navigator>Hello </navigator>
-        <h1 style={{color: "#FF8C00", backgroundColor: "#FF2D00"}}>Good Night</h1>
+        <h1 style={{color: "#FF8C00"}}>Good Night</h1>
         <TodoItem/>
         <TodoItem/>
         <TodoItem/>
