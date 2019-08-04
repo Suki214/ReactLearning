@@ -153,7 +153,8 @@ class App extends React.Component{
       super()
       this.state={
         isLoggedIn: true,
-        character:{}
+        character:{},
+        isLoading: false
       }
       this.handleClicked = this.handleClicked.bind(this)
       
@@ -168,21 +169,24 @@ class App extends React.Component{
     }
 
     componentDidMount(){
+      this.setState( { isLoading:true})
       fetch("https://swapi.co/api/people/1")
         .then(response=>response.json())
         .then(data=>{
           this.setState({
-            character:data
+            character:data,
+            isLoading:false
           })
         })
     }
 
     render(){
       let buttonText = this.state.isLoggedIn? "Log Out": "Log In"
+      let text = this.state.isLoading? "loading..." : this.state.character.name
       return(
         <div>
           <button onClick={this.handleClicked}>{buttonText}</button>
-          <h1>{this.state.character.name}</h1>
+          <h1>{text }</h1>
         </div>
       )
     }
